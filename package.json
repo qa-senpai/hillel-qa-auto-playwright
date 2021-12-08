@@ -1,0 +1,15 @@
+{
+  "name": "playwrightdemo",
+  "version": "1.0.0",
+  "description": "This is for Playwright seminar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Safonov",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.17.1",
+    "typescript": "^4.5.2"
+  }
+}
