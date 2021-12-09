@@ -3,11 +3,11 @@ import { ModalBase } from "./ModalBase";
 export class LoginModal extends ModalBase{
 
 private async setEmail(email: string){
-    await this.typeIntoTextField('Email', email)
+    await this.typeIntoInputField('Email', email)
 }
 
 private async  setPassword(password: string){
-    await this.typeIntoTextField('Password', password)
+    await this.typeIntoInputField('Password', password)
 }
 
 private async  clickLogin(){
