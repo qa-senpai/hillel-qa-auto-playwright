@@ -10,15 +10,15 @@ export class AddCarModal extends ModalBase{
   }
 
   private async pickCarBrand(brand: string){
-        await this.clickOnDropdownElement('Brand', brand)
+        await this.clickDropdownElement('Brand', brand)
     }
 
   private async pickCarModel(model: string){
-        await this.clickOnDropdownElement('Model', model)
+        await this.clickDropdownElement('Model', model)
     }
 
   private async addMileage(text: string){
-        await this.typeIntoTextField('Mileage', text)
+        await this.typeIntoInputField('Mileage', text)
     }
 
   private async clickAdd(){
