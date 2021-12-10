@@ -32,8 +32,7 @@ export class AddCarModal extends ModalBase {
     const response = await Promise.all([
       this.page.waitForResponse(
         (response) =>
-          response.url().includes("https://qauto.forstudy.space/api/cars") &&
-          response.status() === 201
+          response.url().includes("/api/cars") && response.status() === 201
       ),
     ]);
 

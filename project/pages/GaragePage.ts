@@ -12,7 +12,7 @@ export class GaragePage extends PageBase {
   }
 
   async navigateToGaragePage() {
-    await this.page.goto("https://qauto.forstudy.space/panel/garage");
+    await this.page.goto("/panel/garage");
   }
 
   async clickAddCar() {

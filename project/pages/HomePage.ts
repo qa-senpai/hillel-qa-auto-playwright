@@ -16,7 +16,7 @@ export class HomePage extends PageBase {
   }
 
   public async navigateToHomePage() {
-    await this.page.goto(`https://qauto.forstudy.space/`);
+    await this.page.goto(`/`);
   }
 
   public async clickLogin() {
