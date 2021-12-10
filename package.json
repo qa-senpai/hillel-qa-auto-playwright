@@ -1,12 +1,12 @@
 {
   "name": "playwrightdemo",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "This is for Playwright seminar",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Safonov",
+  "author": "Safonov Tech",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.17.1",

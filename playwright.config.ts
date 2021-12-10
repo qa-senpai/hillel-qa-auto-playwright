@@ -1,19 +1,21 @@
-import { PlaywrightTestConfig, devices } from '@playwright/test';
+import { PlaywrightTestConfig, devices } from "@playwright/test";
 
 const config: PlaywrightTestConfig = {
   projects: [
     {
-      name: 'chromium',
+      name: "chromium",
       use: {
-        ...devices['Desktop Chrome'],
+        ...devices["Desktop Chrome"],
         headless: false,
         viewport: { width: 1280, height: 720 },
         ignoreHTTPSErrors: true,
         httpCredentials: {
-          username: "", 
+          username: "",
           password: "",
         },
-        video: 'on-first-retry'}}
+        video: "on-first-retry",
+      },
+    },
   ],
 };
 export default config;

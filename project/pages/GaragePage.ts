@@ -1,26 +1,21 @@
-import { Locator, Page } from "playwright-core";
+import { Page } from "@playwright/test";
 import { AddCarModal } from "../modals/AddCarModal";
 import { PageBase } from "./PageBase";
 
-export class GaragePage extends PageBase{
-page: Page;
-private addCarButton: Locator;
-public  addCarModal: AddCarModal;
+export class GaragePage extends PageBase {
+  page: Page;
+  public addCarModal: AddCarModal;
 
-constructor(page: Page){
+  constructor(page: Page) {
     super(page);
-    this.page = page;
-    this.addCarButton = this.page.locator(`//button[text() = 'Add car']`)
-    this.addCarModal = new AddCarModal(page)
-    //#endregion
-}
+    this.addCarModal = new AddCarModal(this.page);
+  }
 
-async navigateToGaragePage(){
-    await this.page.goto('https://qauto.forstudy.space/panel/garage')
-}
+  async navigateToGaragePage() {
+    await this.page.goto("https://qauto.forstudy.space/panel/garage");
+  }
 
-async clickAddCar(){
-    await this.addCarButton.click()
-}
- 
+  async clickAddCar() {
+    await this.clickOnElement(`//button[text() = 'Add car']`);
+  }
 }
