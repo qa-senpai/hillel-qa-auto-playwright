@@ -1,24 +1,28 @@
-import { Locator, Page } from "@playwright/test";
-
+import { Page } from "@playwright/test";
 
 export class CoreCalls {
-    page: any;
+  page: Page;
 
-    constructor(page: Page){
-        this.page = page;
-    }
+  constructor(page: Page) {
+    this.page = page;
+  }
 
-    protected async clickOnDropdownElementWithLocator(dropdown: Locator, element: string){
-        await dropdown.click();
-        await dropdown?.selectOption([{ label: `${element}`}]);
-    }
+  protected async clickOnDropdownElementWithLocator(
+    locator: string,
+    element: string
+  ) {
+    let dropdownLocator = this.page.locator(locator);
+    await dropdownLocator.click();
+    await dropdownLocator?.selectOption([{ label: `${element}` }]);
+  }
 
-    protected async typeIntoInputFieldWithLocator(locator: Locator, text: string){
-       await locator.type(text);
-    }
+  protected async typeIntoInputFieldWithLocator(locator: string, text: string) {
+    let inputFieldLocator = this.page.locator(locator);
+    await inputFieldLocator.type(text);
+  }
 
-    protected async clickButton(locator: Locator){
-        await locator.click()
-     }
-
+  protected async clickOnElement(locator: string) {
+    let buttonLocator = this.page.locator(locator);
+    await buttonLocator.click();
+  }
 }

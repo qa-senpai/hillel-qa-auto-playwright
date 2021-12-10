@@ -1,20 +1,25 @@
-import { Page } from "playwright-core";
+import { Page } from "@playwright/test";
+import { LoginModal } from "../modals/LoginModal";
 import { PageBase } from "./PageBase";
 
-export class HomePage extends PageBase{
-page: Page;
+export class HomePage extends PageBase {
+  loginModal: LoginModal;
 
-    constructor(page: Page){
-        super(page);
-        this.page = page;
-    }
+  constructor(page: Page) {
+    super(page);
+    this.loginModal = new LoginModal(page);
+  }
 
-    public async navigateToHomePage   (){
-        await this.page.goto(`https://qauto.forstudy.space/`);
-    }
+  public async login() {
+    await this.clickLogin();
+    await this.loginModal.login();
+  }
 
-    public async clickLogin()
-    {
-        await this.page.locator(`//button[text() = 'Sign In']`).click();
-    }
+  public async navigateToHomePage() {
+    await this.page.goto(`https://qauto.forstudy.space/`);
+  }
+
+  public async clickLogin() {
+    await this.clickOnElement(`//button[text() = 'Sign In']`);
+  }
 }

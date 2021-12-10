@@ -1,2 +1,11 @@
 # hillel-qa-auto-playwright
-This is demo for using PlaywrightTest + Typescript to automate simple scenario for hillel-qa-auto
+
+## Basic Setup
+
+- User needs node.js and npm in their machine
+  node.js download - https://nodejs.org/uk/
+
+## Installation
+
+- `npm i` to install all
+- `npx playwright test` to run tests
